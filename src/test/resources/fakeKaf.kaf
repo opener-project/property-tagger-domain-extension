@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<KAF xml:lang="en" version="v1.opener">
+  <kafHeader>
+    <fileDesc/>
+    <linguisticProcessors layer="text">
+      <lp name="opener-tokenizer-en" timestamp="2013-12-05T11:10:12Z" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="terms">
+      <lp name="ehu-pos-en" timestamp="2013-12-05 12:10:13" version="1.0"/>
+      <lp name="VUA polarity tagger multilanguage" timestamp="2014-02-20T16:07:48CET" version="4nov2013_1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="entities">
+      <lp name="ehu-nerc-en" timestamp="2014-02-20 16:07:48" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="constituents">
+      <lp name="ehu-parse-en" timestamp="2014-02-20 16:07:49" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="deps">
+      <lp name="ixa-pipe-srl-en" timestamp="2014-02-51T16:08:14+0100" version="1.0"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="features">
+      <lp name="Property manual annotations" version="1.0" timestamp="2014-04-03T10:35:34CEST"/>
+    </linguisticProcessors>
+    <linguisticProcessors layer="opinions">
+      <lp name="Manual annotations" version="1.0" timestamp="2014-04-03T10:35:34CEST"/>
+    </linguisticProcessors>
+  </kafHeader>
+  <text>
+    <wf sent="1" para="1" offset="0" length="5" wid="w1">Hotel</wf>
+    <wf sent="1" para="1" offset="6" length="4" wid="w2">full</wf>
+    <wf sent="1" para="1" offset="11" length="2" wid="w3">of</wf>
+    <wf sent="1" para="1" offset="14" length="8" wid="w4">Russians</wf>
+    <wf sent="1" para="1" offset="23" length="3" wid="w5">and</wf>
+    <wf sent="1" para="1" offset="27" length="8" wid="w6">children</wf>
+    <wf sent="2" para="2" offset="36" length="5" wid="w7">Hotel</wf>
+    <wf sent="2" para="2" offset="42" length="3" wid="w8">was</wf>
+    <wf sent="2" para="2" offset="46" length="4" wid="w9">full</wf>
+    <wf sent="2" para="2" offset="51" length="2" wid="w10">of</wf>
+    <wf sent="2" para="2" offset="54" length="5" wid="w11">badly</wf>
+    <wf sent="2" para="2" offset="60" length="7" wid="w12">behaved</wf>
+    <wf sent="2" para="2" offset="68" length="8" wid="w13">children</wf>
+    <wf sent="2" para="2" offset="77" length="3" wid="w14">who</wf>
+    <wf sent="2" para="2" offset="81" length="6" wid="w15">rushed</wf>
+    <wf sent="2" para="2" offset="88" length="2" wid="w16">in</wf>
+    <wf sent="2" para="2" offset="91" length="5" wid="w17">front</wf>
+    <wf sent="2" para="2" offset="97" length="2" wid="w18">of</wf>
+    <wf sent="2" para="2" offset="100" length="3" wid="w19">you</wf>
+    <wf sent="2" para="2" offset="104" length="6" wid="w20">almost</wf>
+    <wf sent="2" para="2" offset="111" length="8" wid="w21">knocking</wf>
+    <wf sent="2" para="2" offset="120" length="3" wid="w22">you</wf>
+    <wf sent="2" para="2" offset="124" length="4" wid="w23">over</wf>
+    <wf sent="2" para="2" offset="128" length="1" wid="w24">.</wf>
+    <wf sent="3" para="2" offset="130" length="3" wid="w25">The</wf>
+    <wf sent="3" para="2" offset="134" length="7" wid="w26">Russian</wf>
+    <wf sent="3" para="2" offset="142" length="7" wid="w27">parents</wf>
+    <wf sent="3" para="2" offset="150" length="3" wid="w28">had</wf>
+    <wf sent="3" para="2" offset="154" length="2" wid="w29">no</wf>
+    <wf sent="3" para="2" offset="157" length="7" wid="w30">control</wf>
+    <wf sent="3" para="2" offset="165" length="4" wid="w31">over</wf>
+    <wf sent="3" para="2" offset="170" length="4" wid="w32">them</wf>
+    <wf sent="3" para="2" offset="175" length="2" wid="w33">at</wf>
+    <wf sent="3" para="2" offset="178" length="3" wid="w34">any</wf>
+    <wf sent="3" para="2" offset="182" length="4" wid="w35">time</wf>
+    <wf sent="3" para="2" offset="186" length="1" wid="w36">.</wf>
+    <wf sent="4" para="2" offset="189" length="3" wid="w37">The</wf>
+    <wf sent="4" para="2" offset="193" length="4" wid="w38">food</wf>
+    <wf sent="4" para="2" offset="198" length="3" wid="w39">was</wf>
+    <wf sent="4" para="2" offset="202" length="4" wid="w40">very</wf>
+    <wf sent="4" para="2" offset="207" length="5" wid="w41">basic</wf>
+    <wf sent="4" para="2" offset="212" length="1" wid="w42">,</wf>
+    <wf sent="4" para="2" offset="214" length="3" wid="w43">but</wf>
+    <wf sent="4" para="2" offset="218" length="6" wid="w44">edible</wf>
+    <wf sent="4" para="2" offset="225" length="4" wid="w45">with</wf>
+    <wf sent="4" para="2" offset="230" length="4" wid="w46">good</wf>
+    <wf sent="4" para="2" offset="235" length="5" wid="w47">bread</wf>
+    <wf sent="4" para="2" offset="240" length="1" wid="w48">,</wf>
+    <wf sent="4" para="2" offset="242" length="4" wid="w49">soup</wf>
+    <wf sent="4" para="2" offset="247" length="3" wid="w50">and</wf>
+    <wf sent="4" para="2" offset="251" length="8" wid="w51">desserts</wf>
+    <wf sent="4" para="2" offset="259" length="1" wid="w52">.</wf>
+    <wf sent="5" para="2" offset="261" length="4" wid="w53">Room</wf>
+    <wf sent="5" para="2" offset="266" length="3" wid="w54">was</wf>
+    <wf sent="5" para="2" offset="270" length="4" wid="w55">very</wf>
+    <wf sent="5" para="2" offset="275" length="5" wid="w56">clean</wf>
+    <wf sent="5" para="2" offset="281" length="3" wid="w57">and</wf>
+    <wf sent="5" para="2" offset="285" length="5" wid="w58">large</wf>
+    <wf sent="5" para="2" offset="291" length="4" wid="w59">with</wf>
+    <wf sent="5" para="2" offset="296" length="7" wid="w60">english</wf>
+    <wf sent="5" para="2" offset="304" length="8" wid="w61">speaking</wf>
+    <wf sent="5" para="2" offset="313" length="4" wid="w62">room</wf>
+    <wf sent="5" para="2" offset="318" length="3" wid="w63">boy</wf>
+    <wf sent="5" para="2" offset="322" length="3" wid="w64">who</wf>
+    <wf sent="5" para="2" offset="326" length="3" wid="w65">was</wf>
+    <wf sent="5" para="2" offset="330" length="4" wid="w66">very</wf>
+    <wf sent="5" para="2" offset="335" length="6" wid="w67">polite</wf>
+    <wf sent="5" para="2" offset="342" length="3" wid="w68">and</wf>
+    <wf sent="5" para="2" offset="346" length="8" wid="w69">helpfull</wf>
+    <wf sent="5" para="2" offset="354" length="1" wid="w70">.</wf>
+    <wf sent="6" para="2" offset="356" length="3" wid="w71">The</wf>
+    <wf sent="6" para="2" offset="360" length="3" wid="w72">bar</wf>
+    <wf sent="6" para="2" offset="364" length="5" wid="w73">staff</wf>
+    <wf sent="6" para="2" offset="370" length="6" wid="w74">looked</wf>
+    <wf sent="6" para="2" offset="377" length="5" wid="w75">tired</wf>
+    <wf sent="6" para="2" offset="383" length="3" wid="w76">and</wf>
+    <wf sent="6" para="2" offset="387" length="10" wid="w77">overworked</wf>
+    <wf sent="6" para="2" offset="398" length="3" wid="w78">but</wf>
+    <wf sent="6" para="2" offset="402" length="3" wid="w79">did</wf>
+    <wf sent="6" para="2" offset="406" length="4" wid="w80">make</wf>
+    <wf sent="6" para="2" offset="411" length="2" wid="w81">an</wf>
+    <wf sent="6" para="2" offset="414" length="6" wid="w82">effort</wf>
+    <wf sent="6" para="2" offset="421" length="2" wid="w83">to</wf>
+    <wf sent="6" para="2" offset="424" length="5" wid="w84">smile</wf>
+    <wf sent="6" para="2" offset="430" length="3" wid="w85">and</wf>
+    <wf sent="6" para="2" offset="434" length="4" wid="w86">make</wf>
+    <wf sent="6" para="2" offset="439" length="4" wid="w87">nice</wf>
+    <wf sent="6" para="2" offset="444" length="8" wid="w88">comments</wf>
+    <wf sent="6" para="2" offset="453" length="2" wid="w89">to</wf>
+    <wf sent="6" para="2" offset="456" length="3" wid="w90">you</wf>
+    <wf sent="6" para="2" offset="460" length="4" wid="w91">once</wf>
+    <wf sent="6" para="2" offset="465" length="4" wid="w92">they</wf>
+    <wf sent="6" para="2" offset="470" length="4" wid="w93">knew</wf>
+    <wf sent="6" para="2" offset="475" length="3" wid="w94">you</wf>
+    <wf sent="6" para="2" offset="479" length="4" wid="w95">were</wf>
+    <wf sent="6" para="2" offset="484" length="7" wid="w96">English</wf>
+    <wf sent="6" para="2" offset="491" length="1" wid="w97">.</wf>
+    <wf sent="7" para="2" offset="493" length="3" wid="w98">Not</wf>
+    <wf sent="7" para="2" offset="497" length="8" wid="w99">suitable</wf>
+    <wf sent="7" para="2" offset="506" length="3" wid="w100">for</wf>
+    <wf sent="7" para="2" offset="510" length="7" wid="w101">couples</wf>
+    <wf sent="7" para="2" offset="518" length="7" wid="w102">without</wf>
+    <wf sent="7" para="2" offset="526" length="8" wid="w103">children</wf>
+    <wf sent="7" para="2" offset="535" length="2" wid="w104">as</wf>
+    <wf sent="7" para="2" offset="538" length="7" wid="w105">evening</wf>
+    <wf sent="7" para="2" offset="546" length="13" wid="w106">entertainment</wf>
+    <wf sent="7" para="2" offset="560" length="3" wid="w107">was</wf>
+    <wf sent="7" para="2" offset="564" length="6" wid="w108">almost</wf>
+    <wf sent="7" para="2" offset="571" length="4" wid="w109">nill</wf>
+    <wf sent="7" para="2" offset="576" length="3" wid="w110">and</wf>
+    <wf sent="7" para="2" offset="580" length="6" wid="w111">geared</wf>
+    <wf sent="7" para="2" offset="587" length="3" wid="w112">for</wf>
+    <wf sent="7" para="2" offset="591" length="8" wid="w113">families</wf>
+    <wf sent="7" para="2" offset="599" length="1" wid="w114">.</wf>
+  </text>
+  </KAF>

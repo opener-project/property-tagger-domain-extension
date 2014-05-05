@@ -1,4 +1,4 @@
-package org.vicomtech.opener.targetProperties;
+package org.openerproject.targetproperties;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

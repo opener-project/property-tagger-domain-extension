@@ -1,4 +1,4 @@
-package org.vicomtech.opener.targetProperties.data;
+package org.openerproject.targetproperties.data;
 
 //import static org.junit.Assert.*;
 //

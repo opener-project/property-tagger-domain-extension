@@ -30,6 +30,7 @@ public class Main {
 		options.addOption("semvecs","semantic-vectors",false,"Preprocess corpus and generate semantic vectors");
 		options.addOption("kaf", "already-in-kaf", false, "Flag to state if the input corpus is already in kaf or not (i.e. plain text)");
 		options.addOption("d","corpus-dir",true, "Path to the directory containing the corpus files");
+		options.addOption("mw","multiwords",true, "Path to the file containing the multiwords, one per line");
 		options.addOption("lang", "language", true, "Language of the corpus files content, to use when preprocessing them");
 		options.addOption("out", "output-folder", true, "Folder in which all the intermediate and final results will be stored");
 	}
@@ -52,6 +53,7 @@ public class Main {
 	        	boolean isKaf=line.hasOption("kaf");
 	        	String pathToCorpusDir=line.getOptionValue("d");
 	        	String outputPath=line.getOptionValue("out");
+	        	String multiwordsFilePath=line.getOptionValue("mw");
 	        	if(pathToCorpusDir==null || pathToCorpusDir.length()==0){
 	        		throw new RuntimeException("Path to folder with the corpus is missing!");
 	        	}
@@ -59,13 +61,18 @@ public class Main {
 	        		log.info("No output path defined, defaulting to current directory");
 	        		outputPath=".";//throw new RuntimeException("Path to folder with the corpus is missing!");
 	        	}
+	        	
+	        	if(multiwordsFilePath==null || multiwordsFilePath.length()==0){
+	        		log.info("No valid multiwords files defined, no multiword will be detected");
+	        		multiwordsFilePath="NONE";
+	        	}
 	        	String lang=line.getOptionValue("lang");
 	        	if(!validLangs.contains(lang)){
 	        		throw new RuntimeException("Invalid language: "+lang+"\nAllowed languages: "+validLangs.toString());
 	        	}
 	        	SemanticVectorProcess semanticVectorProcess=(SemanticVectorProcess) getBeanFromContainer("SemanticVectorProcess");
 	        	log.info("Launching semanticVectorProcess with params: corpus-dir="+pathToCorpusDir+" ; lang="+lang+" ; alreadyInKaf="+isKaf+" ; output-folder"+outputPath);
-	        	semanticVectorProcess.execute(pathToCorpusDir, lang, isKaf, outputPath);
+	        	semanticVectorProcess.execute(pathToCorpusDir, lang, isKaf,multiwordsFilePath, outputPath);
 	        	
 	        }else{
 	        	HelpFormatter formatter = new HelpFormatter();

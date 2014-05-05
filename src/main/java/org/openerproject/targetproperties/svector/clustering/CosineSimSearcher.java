@@ -38,7 +38,7 @@ public class CosineSimSearcher {
 //		FlagConfig flagConfig = FlagConfig.getFlagConfig(new String[]{"-luceneindexpath",luceneIndexPath});
 //		LuceneUtils luceneUtils = new LuceneUtils(flagConfig);
 //		CloseableVectorStore vecReader = VectorStoreReader.openVectorStore(pathToTermVectorsFile, flagConfig);
-		 Vector vec1 = CompoundVectorBuilder.getQueryVectorFromString(
+		Vector vec1 = CompoundVectorBuilder.getQueryVectorFromString(
 			        closeableVectorStore, luceneUtils, flagConfig, term1);
 		Vector vec2 = CompoundVectorBuilder.getQueryVectorFromString(
 			        closeableVectorStore, luceneUtils, flagConfig, term2);

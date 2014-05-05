@@ -18,4 +18,10 @@ public interface DocumentPreprocessor {
 	 */
 	public List<String> preprocessDocument(String content, String language,boolean isKaf);
 	
+	
+	/**
+	 * Load multiwords from a list of multiwords
+	 */
+	public void loadMultiwords(List<String>multiwords);
+	
 }
