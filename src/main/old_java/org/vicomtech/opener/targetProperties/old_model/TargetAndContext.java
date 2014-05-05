@@ -1,4 +1,4 @@
-package org.vicomtech.opener.targetProperties.model;
+package org.vicomtech.opener.targetProperties.old_model;
 
 import java.util.List;
 

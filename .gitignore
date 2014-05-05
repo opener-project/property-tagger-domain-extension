@@ -2,3 +2,15 @@
 .project
 .classpath
 .settings/
+/ALL_ENGLISH_REVIEWS.txt
+/CORPUS
+/REVIEW_CORPUS
+/log
+/MYINDEX
+/cluster_centroids.bin
+/docvectors.bin
+/SSPACE_OUTPUT_FILE_TEST.ssp
+/termvectors.bin
+/MAIN_OUTPUT
+/EN_REVIEWS_KAF
+/EN_REVIEWS_KAF_BIG

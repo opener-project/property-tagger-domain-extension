@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util">
+
+	<!-- services -->
+	<!-- <bean id="petStore" class="org.springframework.samples.jpetstore.services.PetStoreServiceImpl"> 
+		<property name="accountDao" ref="accountDao"/> <property name="itemDao" ref="itemDao"/> 
+		additional collaborators and configuration for this bean go here </bean> -->
+
+	<!-- more bean definitions for services go here -->
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<value>classpath:spring-props.properties</value>
+		</property>
+		<!-- <property name="properties"> <value>custom.strategy.class=com.foo.DefaultStrategy</value> 
+			</property> -->
+	</bean>
+
+	<!-- <bean id="analysisTypes" class="${groupId}.kaf.AnalysisTypes"></bean> -->
+
+	<bean id="kafAnalyzer"
+		class="org.openerproject.targetproperties.kaf.CustomWebServicesKafAnalyzer">
+		<property name="endpointURL" value="${kafAnalysisWebserviceEndpointURL}"></property>
+		<!-- <property name="analysisTypes" ref="analysisTypes"></property> -->
+	</bean>
+
+<!-- 	<bean id="algorithmExecutorWithKAF"
+		class="org.openerproject.targetproperties.sspace.AlgorithmExecutorWithKAF">
+		<property name="kafAnalyzer" ref="kafAnalyzer"></property>
+		<property name="documentReader" ref="documentReader"></property>
+	</bean>
+
+	<bean id="documentReader"
+		class="org.openerproject.targetproperties.data.RawTextDocumentReader">
+	</bean>
+
+	<bean id="main" class="org.openerproject.targetproperties.main.Main">
+		<property name="algorithmExecutor" ref="algorithmExecutorWithKAF"></property>
+	</bean> -->
+
+	<!-- NEW PART, FOR SEMANTIC VECTORS -->
+
+	<bean id="plainTextCorpusReader"
+		class="org.openerproject.targetproperties.data.bis.PlainTextCorpusReader">
+	</bean>
+
+	<bean id="documentPreprocessorImpl"
+		class="org.openerproject.targetproperties.svector.documents.DocumentPreprocessorImpl">
+		<property name="analyzer" ref="kafAnalyzer"></property>
+	</bean>
+
+	<bean id="luceneIndexCreator"
+		class="org.openerproject.targetproperties.svector.indexing.LuceneIndexCreator"></bean>
+
+	<bean id="semanticVectorIndexBuilder"
+		class="org.openerproject.targetproperties.svector.indexing.SemanticVectorIndexBuilder"></bean>
+
+	<bean id="SemanticVectorProcess"
+		class="org.openerproject.targetproperties.svector.SemanticVectorProcess">
+		<property name="corpusReader" ref="plainTextCorpusReader"></property>
+		<property name="documentPreprocessor" ref="documentPreprocessorImpl"></property>
+		<property name="luceneIndexCreator" ref="luceneIndexCreator"></property>
+		<property name="semanticVectorIndexBuilder" ref="semanticVectorIndexBuilder"></property>
+	</bean>
+
+</beans>

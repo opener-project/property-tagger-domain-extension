@@ -1,4 +1,4 @@
-package org.vicomtech.opener.targetProperties.model;
+package org.vicomtech.opener.targetProperties.old_model;
 
 import ixa.kaflib.Term;
 
@@ -73,11 +73,29 @@ public class WordInfo {
 	}
 
 	public List<WordInfo> getComposingWords() {
+		if(this.composingWords.size()==0){
+			return Lists.newArrayList(this);
+		}
 		return composingWords;
 	}
 
 	public void setComposingWords(List<WordInfo> composingWords) {
 		this.composingWords = composingWords;
 	}
+	
+	public boolean isNoun(){
+		return this.tag.equals("N");
+	}
 
+	public boolean isAdverb(){
+		return this.tag.equals("A");
+	}
+	
+	public boolean isAdj(){
+		return this.tag.equals("G");
+	}
+	
+	public boolean isVerb(){
+		return this.tag.equals("V");
+	}
 }
