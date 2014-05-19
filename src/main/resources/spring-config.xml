@@ -47,7 +47,7 @@
 	<!-- NEW PART, FOR SEMANTIC VECTORS -->
 
 	<bean id="plainTextCorpusReader"
-		class="org.openerproject.targetproperties.data.bis.PlainTextCorpusReader">
+		class="org.openerproject.targetproperties.data.PlainTextCorpusReader">
 	</bean>
 
 	<bean id="documentPreprocessorImpl"

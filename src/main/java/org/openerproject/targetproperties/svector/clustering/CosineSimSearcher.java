@@ -30,7 +30,7 @@ public class CosineSimSearcher {
 		
 	}
 	
-	public double getCosineDistance(String term1,String term2) throws IOException, ZeroVectorException{
+	public double getCosineDistance(String term1,String whiteSpaceSeparatedTerms) throws IOException, ZeroVectorException{
 		
 		//-searchvectorfile search_vector_file
 		//String[]args={"-searchvectorfile",""};
@@ -41,13 +41,18 @@ public class CosineSimSearcher {
 		Vector vec1 = CompoundVectorBuilder.getQueryVectorFromString(
 			        closeableVectorStore, luceneUtils, flagConfig, term1);
 		Vector vec2 = CompoundVectorBuilder.getQueryVectorFromString(
-			        closeableVectorStore, luceneUtils, flagConfig, term2);
+			        closeableVectorStore, luceneUtils, flagConfig, whiteSpaceSeparatedTerms);
 		
 		VectorSearcherCosine vcosine=new VectorSearcherCosine(closeableVectorStore, closeableVectorStore, luceneUtils, flagConfig, vec1);
 		
 		double score = vcosine.getScore(vec2);
 		return score;
 		
+	}
+	
+	public boolean isInDictionary(String term){
+		Vector tmpVec = closeableVectorStore.getVector(term);
+		return tmpVec!=null;
 	}
 	
 }

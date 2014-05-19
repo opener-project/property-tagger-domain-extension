@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
-import org.openerproject.targetproperties.data.bis.CorpusReader;
+import org.openerproject.targetproperties.data.CorpusReader;
 import org.openerproject.targetproperties.svector.documents.DocumentPreprocessor;
 import org.openerproject.targetproperties.svector.indexing.LuceneIndexCreator;
 import org.openerproject.targetproperties.svector.indexing.SemanticVectorIndexBuilder;
@@ -33,7 +33,7 @@ public class SemanticVectorProcess {
 	 * Thus, the indexes will be created in the current folder, and there is no need of the "outputRootFolder" parameter since the intermediate stuff can be created also relative to the current folder
 	 */
 	
-	public void execute(String corpusDir, String language, boolean isKAF, String multiwordsFile, String outputRootFolder){
+	public void execute(String corpusDir, String language, boolean isKAF, String multiwordsFile, int numDimensions, int numCycles, String outputRootFolder){
 		//Required params:
 			//path to dir with corpus documents
 			//language of the documents
@@ -89,7 +89,7 @@ public class SemanticVectorProcess {
 		//build semantic vector index from the generated lucene index, inside a fixed subfolder relative to the output root
 		//String pathToSemanticVectorsIndex=outputRootFolder+File.separator+SEMANTIC_VECTORS_OUTPUT_SUBFOLDER;
 		log.info("Creating SemanticVectors index...");
-		semanticVectorIndexBuilder.buildIndex(pathToLuceneIndex, outputRootFolder);
+		semanticVectorIndexBuilder.buildIndex(pathToLuceneIndex, outputRootFolder, numDimensions,numCycles);
 		log.info("Process done");
 	}
 
