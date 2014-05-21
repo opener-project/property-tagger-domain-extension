@@ -28,35 +28,29 @@ public class SemanticVectorProcess {
 	private SemanticVectorIndexBuilder semanticVectorIndexBuilder;
 	
 	
+	public void execute(String corpusDir,String multiwordsFile,int numDimensions,int numCycles,String outputFolder){
+		List<String>multiwords=Lists.newArrayList();
+		try {
+			multiwords = FileUtils.readLines(new File(multiwordsFile), "UTF-8");
+			documentPreprocessor.loadMultiwords(multiwords);
+		} catch (IOException e) {
+			log.warn("Error reading multiword file: " + e.getMessage());
+		}
+		execute(corpusDir, numDimensions, numCycles, outputFolder);
+	}
+	
 	/*
 	 * ATTENTION: The semantic vectors index creation does not allow (from the main method) to set an output folder. 
 	 * Thus, the indexes will be created in the current folder, and there is no need of the "outputRootFolder" parameter since the intermediate stuff can be created also relative to the current folder
 	 */
 	
-	public void execute(String corpusDir, String language, boolean isKAF, String multiwordsFile, int numDimensions, int numCycles, String outputRootFolder){
-		//Required params:
-			//path to dir with corpus documents
-			//language of the documents
-			//flag to state whether they are already KAF or just plain text
-			//output path for the result (acting as the root of any kind of intermediate and final outputs)
-			//any other params required by the processes (index building)
-		
-		
+	public void execute(String corpusDir, int numDimensions, int numCycles, String outputRootFolder){		
 		//Read the docs from the folder passed in a parameter
 		log.info("Loading files from corpus folder...");
 		List<File> corpusFiles = CorpusHandlingUtils.getFilesFromDir(corpusDir);
 		log.info("Loaded "+corpusFiles.size()+" files");
 		log.info("Starting files preprocessing...");
 		String preprocessOutputFolder=outputRootFolder+File.separator+PREPROCESSED_FILES_SUBFOLDER;
-		List<String>multiwords=Lists.newArrayList();
-		if(!multiwordsFile.equals("NONE")){
-			try {
-				multiwords= FileUtils.readLines(new File(multiwordsFile),"UTF-8");
-				documentPreprocessor.loadMultiwords(multiwords);
-			} catch (IOException e) {
-				log.warn("Error reading multiword file: "+e.getMessage());
-			}
-		}
 		
 		int fileCount=1;
 		int totalFileNumber=corpusFiles.size();
@@ -72,7 +66,7 @@ public class SemanticVectorProcess {
 			String fileContent=corpusReader.readCorpusFileContent(corpusFile);
 			//Preprocess the content (if they are KAF or RAW text, stated in a parameter)
 			log.info("Preprocessing content...");
-			List<String> textsResultingFromPreprocess = documentPreprocessor.preprocessDocument(fileContent, language, isKAF);
+			List<String> textsResultingFromPreprocess = documentPreprocessor.preprocessDocument(fileContent);
 			log.info("After the preprocessing the content has been split in "+textsResultingFromPreprocess.size()+" documents. Writing to their respective files...");
 			//Store the "preprocessed" output (input from the next part) in a predefined subfolder, relative to the stated output root folder
 			CorpusHandlingUtils.writeTextsToFiles(textsResultingFromPreprocess, preprocessOutputFolder);

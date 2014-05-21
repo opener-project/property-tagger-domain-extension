@@ -89,7 +89,7 @@ public class Main {
 	        	int numDimensions=numCyclesValue==null?200:Integer.parseInt(numDimensionsValue);
 	        	SemanticVectorProcess semanticVectorProcess=(SemanticVectorProcess) getBeanFromContainer("SemanticVectorProcess");
 	        	log.info("Launching semanticVectorProcess with params: corpus-dir="+pathToCorpusDir+" ; lang="+lang+" ; alreadyInKaf="+isKaf+" ; output-folder"+outputPath);
-	        	semanticVectorProcess.execute(pathToCorpusDir, lang, isKaf,multiwordsFilePath, numDimensions, numCycles, outputPath);
+	        	semanticVectorProcess.execute(pathToCorpusDir, /*lang, isKaf,*/multiwordsFilePath, numDimensions, numCycles, outputPath);
 	        	
 	        }else{
 	        	HelpFormatter formatter = new HelpFormatter();

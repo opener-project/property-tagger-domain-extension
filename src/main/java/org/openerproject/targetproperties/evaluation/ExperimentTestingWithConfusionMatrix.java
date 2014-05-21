@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
-import org.openerproject.targetproperties.evaluation.resultprinting.HtmlTable2;
+import org.openerproject.targetproperties.evaluation.resultprinting.HtmlConfusionMatrix;
 import org.openerproject.targetproperties.sandbox.RepresentativeTargetPropertiesSampler;
 import org.openerproject.targetproperties.sandbox.RepresentativeTargetPropertiesSampler.CategoryRepresentatives;
 import org.openerproject.targetproperties.sandbox.RepresentativeTargetPropertiesSampler.TargetAndCategory;
@@ -67,7 +67,7 @@ public class ExperimentTestingWithConfusionMatrix {
 
 		cosineSimSearcher = new CosineSimSearcher(luceneIndexPath, termVectorsFilePath);
 
-		HtmlTable2 confusionMatrix=HtmlTable2.createNew("CONFUSION MATRIX");
+		HtmlConfusionMatrix confusionMatrix=HtmlConfusionMatrix.createNew("CONFUSION MATRIX");
 		
 //		List<CategoryRepresentatives> categoryRepresentativesList = RepresentativeTargetPropertiesSampler
 //				.getRepresentativesFromGoldFile(goldFilePath, numRepresentatives);
@@ -127,7 +127,7 @@ public class ExperimentTestingWithConfusionMatrix {
 	}
 
 	private String generateHTMLPageWithResultsTable(List<String> htmlTableRows, int correctPredictions,
-			int incorrectPredictions, int outOfDictionaryTargets,HtmlTable2 confusionMatrix) {
+			int incorrectPredictions, int outOfDictionaryTargets,HtmlConfusionMatrix confusionMatrix) {
 		StringBuffer sb = new StringBuffer();
 		sb.append("<html><head><title>RESULTS</title></head><body><table><tr><th>OPINION TARGET</th><th>PREDICTED CATEGORY</th><th>GOLD CATEGORY</th></tr>");
 		for (String htmlTableRow : htmlTableRows) {

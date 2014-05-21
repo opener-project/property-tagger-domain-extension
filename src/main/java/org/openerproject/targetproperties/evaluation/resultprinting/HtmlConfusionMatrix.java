@@ -13,7 +13,7 @@ import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Table;
 
-public class HtmlTable2 {
+public class HtmlConfusionMatrix {
 
 	private static final String HEADER_ROW="header_marker";
 	private static final String ROW_NAME_COLUMN="row_name_marker";
@@ -32,15 +32,15 @@ public class HtmlTable2 {
 	private int maxValue;
 	private List<String>names;
 	
-	private HtmlTable2(String title){
+	private HtmlConfusionMatrix(String title){
 		super();
 		table=HashBasedTable.create();
 		this.title=title;
 		this.maxValue=0;
 	}
 	
-	public static HtmlTable2 createNew(String title){
-		return new HtmlTable2(title);
+	public static HtmlConfusionMatrix createNew(String title){
+		return new HtmlConfusionMatrix(title);
 	}
 	
 	public void addHeaderCell(String column,String colName){

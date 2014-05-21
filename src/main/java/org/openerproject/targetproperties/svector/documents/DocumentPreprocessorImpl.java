@@ -21,18 +21,10 @@ public class DocumentPreprocessorImpl implements DocumentPreprocessor {
 
 	private Analyzer analyzer;
 
-	private Multimap<String, List<String>> multiwordMap=ArrayListMultimap.create();// =loadMultiwordMap(null);
+	private Multimap<String, List<String>> multiwordMap=ArrayListMultimap.create();
 
 	@Override
-	public List<String> preprocessDocument(String content, String language, boolean isKaf) {
-		//loadMultiwords(multiwords);
-		String kaf = null;
-		if (isKaf) {
-			kaf = content;
-		} else {
-			kaf = getKAF(content, language);
-		}
-
+	public List<String> preprocessDocument(String kaf) {
 		List<String> preprocessedContent = getPreprocessedContent(kaf);
 		return preprocessedContent;
 	}

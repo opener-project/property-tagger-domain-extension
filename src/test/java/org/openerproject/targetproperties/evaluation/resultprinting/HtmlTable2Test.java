@@ -11,11 +11,11 @@ import com.google.common.collect.Lists;
 
 public class HtmlTable2Test {
 
-	private HtmlTable2 htmlTable2;
+	private HtmlConfusionMatrix htmlTable2;
 	
 	@Before
 	public void setUp() throws Exception {
-		htmlTable2=HtmlTable2.createNew("TITLE");
+		htmlTable2=HtmlConfusionMatrix.createNew("TITLE");
 	}
 
 	@Test
