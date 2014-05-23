@@ -54,9 +54,8 @@ public class Main2 {
 				MainSemanticVectorGeneration mainSemanticVectorGeneration=new MainSemanticVectorGeneration(appContext);
 				mainSemanticVectorGeneration.processParametersAndExecute(rest);
 			}else if(operation.equalsIgnoreCase(CLASSIFY_TARGETS_OPT)){
-				
-				
-				
+				MainOpinionTargetClassifier mainOpinionTargetClassifier=new MainOpinionTargetClassifier();
+				mainOpinionTargetClassifier.processParametersAndExecute(rest);
 			}else{
 				throw new RuntimeException("Wrong main parameter: "+operation);
 			}

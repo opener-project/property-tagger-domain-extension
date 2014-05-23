@@ -9,13 +9,13 @@ import org.junit.Test;
 
 import com.google.common.collect.Lists;
 
-public class HtmlTable2Test {
+public class HtmlConfusionMatrixTest {
 
-	private HtmlConfusionMatrix htmlTable2;
+	private HtmlConfusionMatrix htmlConfusionMatrix;
 	
 	@Before
 	public void setUp() throws Exception {
-		htmlTable2=HtmlConfusionMatrix.createNew("TITLE");
+		htmlConfusionMatrix=HtmlConfusionMatrix.createNew("TITLE");
 	}
 
 	@Test
@@ -26,22 +26,22 @@ public class HtmlTable2Test {
 			cats.add("category_"+i);
 		}
 		for(String category:cats){
-			htmlTable2.addHeaderCell(category,category);
-			htmlTable2.addRowName(category,category);
+			htmlConfusionMatrix.addHeaderCell(category,category);
+			htmlConfusionMatrix.addRowName(category,category);
 		}
 		
 		for(String category:cats){
 			for(String category2:cats){
 				if(category.endsWith(category2)){
-					htmlTable2.addValue(category,category2, (int)Math.round(100*Math.random()*4));
+					htmlConfusionMatrix.addValue(category,category2, (int)Math.round(100*Math.random()*4));
 				}else{
-					htmlTable2.addValue(category,category2, (int)Math.round(100*Math.random()));
+					htmlConfusionMatrix.addValue(category,category2, (int)Math.round(100*Math.random()));
 				}
 				
 			}
 		}
 
-		htmlTable2.printHtml();
+		htmlConfusionMatrix.printHtml();
 		
 		//fail("Not yet implemented");
 	}
