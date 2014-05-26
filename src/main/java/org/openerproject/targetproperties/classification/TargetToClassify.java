@@ -9,13 +9,14 @@ import org.apache.log4j.Logger;
 
 import com.google.common.collect.Lists;
 
-public class TargetToClassify {
+public class TargetToClassify implements Comparable<TargetToClassify>{
 
 	private static Logger log=Logger.getLogger(TargetToClassify.class);
 	
 	private String opinionTarget;
 	private String goldCategory;
 	private String assignedCategory;
+	private boolean outOfDictionaryTerm;
 	
 	public TargetToClassify(String opinionTarget) {
 		super();
@@ -80,6 +81,31 @@ public class TargetToClassify {
 			return false;
 		}else{
 			return goldCategory.equals(assignedCategory);
+		}
+	}
+
+	public boolean isOutOfDictionaryTerm() {
+		return outOfDictionaryTerm;
+	}
+
+	public void setOutOfDictionaryTerm(boolean outOfDictionaryTerm) {
+		this.outOfDictionaryTerm = outOfDictionaryTerm;
+	}
+
+	@Override
+	public int compareTo(TargetToClassify anotherTargetToClassify) {
+		if(anotherTargetToClassify.goldCategory==null){
+			return 1;
+		}else if(this.goldCategory==null){
+			return -1;
+		}else{
+			//none of them are null
+			int res= anotherTargetToClassify.goldCategory.compareTo(this.goldCategory);
+			if(res==0){
+				return anotherTargetToClassify.opinionTarget.compareTo(this.opinionTarget);
+			}else{
+				return res;
+			}
 		}
 	}
 

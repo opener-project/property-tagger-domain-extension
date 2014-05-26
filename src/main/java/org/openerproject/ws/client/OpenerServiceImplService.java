@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "OpenerServiceImplService", targetNamespace = "http://remoteservice.vicomtech.org/", wsdlLocation = "file:/C:/Users/yo/Desktop/git_repos/target-properties/src/main/resources/opener-analysis-service.wsdl")
+@WebServiceClient(name = "OpenerServiceImplService", targetNamespace = "http://remoteservice.vicomtech.org/", wsdlLocation = "file:/C:/Users/agarciap/repositories/research/target-properties/src/main/resources/opener-analysis-service.wsdl")
 public class OpenerServiceImplService
     extends Service
 {
@@ -30,9 +30,9 @@ public class OpenerServiceImplService
         try {
             URL baseUrl;
             baseUrl = org.openerproject.ws.client.OpenerServiceImplService.class.getResource(".");
-            url = new URL(baseUrl, "file:/C:/Users/yo/Desktop/git_repos/target-properties/src/main/resources/opener-analysis-service.wsdl");
+            url = new URL(baseUrl, "file:/C:/Users/agarciap/repositories/research/target-properties/src/main/resources/opener-analysis-service.wsdl");
         } catch (MalformedURLException e) {
-            logger.warning("Failed to create URL for the wsdl Location: 'file:/C:/Users/yo/Desktop/git_repos/target-properties/src/main/resources/opener-analysis-service.wsdl', retrying as a local file");
+            logger.warning("Failed to create URL for the wsdl Location: 'file:/C:/Users/agarciap/repositories/research/target-properties/src/main/resources/opener-analysis-service.wsdl', retrying as a local file");
             logger.warning(e.getMessage());
         }
         OPENERSERVICEIMPLSERVICE_WSDL_LOCATION = url;

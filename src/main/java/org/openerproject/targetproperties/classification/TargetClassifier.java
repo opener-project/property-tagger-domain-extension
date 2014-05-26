@@ -30,8 +30,12 @@ public class TargetClassifier {
 		List<CategoryDefinition> categoryDefinitions = CategoryDefinition.readCategoryDefinitions(categoryDefinitionsFilePath);
 		cosineSimSearcher = new CosineSimSearcher(luceneIndexPath, termVectorsFilePath);
 		for(TargetToClassify targetToClassify:targetsToClassifyList){
-			String mostSimilarCategory=getMostSimilarCategory(targetToClassify.getOpinionTarget(), categoryDefinitions);
-			targetToClassify.setAssignedCategory(mostSimilarCategory);
+			if(cosineSimSearcher.isInDictionary(targetToClassify.getOpinionTarget())){
+				String mostSimilarCategory=getMostSimilarCategory(targetToClassify.getOpinionTarget(), categoryDefinitions);
+				targetToClassify.setAssignedCategory(mostSimilarCategory);
+			}else{
+				targetToClassify.setOutOfDictionaryTerm(true);
+			}
 		}
 		return targetsToClassifyList;
 	}

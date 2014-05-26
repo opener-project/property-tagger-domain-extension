@@ -9,6 +9,7 @@ import java.util.List;
 import org.apache.commons.cli.BasicParser;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
@@ -36,13 +37,13 @@ public class MainOpinionTargetClassifier {
 	@SuppressWarnings("static-access")
 	private Options buildOptions(){
 		options=new Options();
-		Option luceneIndexPath=OptionBuilder.hasArg(true).isRequired(true).create(GlobalVariables.LUCENE_INDEX_PATH_OPT);
-		Option targetsToClassifyFilePath=OptionBuilder.hasArg(true).isRequired(true).create(TARGETS_TO_CLASSIFY_PATH_OPT);
-		Option categoryDefinitionsFilePath=OptionBuilder.hasArg(true).isRequired(true).create(CATEGORY_DEFINITIONS_PATH_OPT);
-		Option termVectorsFilePath=OptionBuilder.hasArg(true).isRequired(true).create(TERM_VECTORS_PATH_OPT);
-		Option evaluateClassifiedTargets=OptionBuilder.hasArg(false).isRequired(false).create(EVALUATE_CLASSIFIED_TARGETS_OPT);
-		Option outputResultFile=OptionBuilder.hasArg(true).isRequired(true).create(OUTPUT_RESULT_PATH_OPT);
-		Option outputHtmlEvalFile=OptionBuilder.hasArg(true).isRequired(true).create(HTML_EVAL_OUTPUT_PATH_OPT);
+		Option luceneIndexPath=OptionBuilder.withDescription("Path to Lucene index").hasArg(true).isRequired(true).create(GlobalVariables.LUCENE_INDEX_PATH_OPT);
+		Option targetsToClassifyFilePath=OptionBuilder.withDescription("Path to file with the targets you want to classify").hasArg(true).isRequired(true).create(TARGETS_TO_CLASSIFY_PATH_OPT);
+		Option categoryDefinitionsFilePath=OptionBuilder.withDescription("Path to file with the category definitions (i.e with example targets)").hasArg(true).isRequired(true).create(CATEGORY_DEFINITIONS_PATH_OPT);
+		Option termVectorsFilePath=OptionBuilder.withDescription("Path to SemanticVectors term vectors file").hasArg(true).isRequired(true).create(TERM_VECTORS_PATH_OPT);
+		Option evaluateClassifiedTargets=OptionBuilder.withDescription("Evaluate the results (comparison table and confusion matrix)").hasArg(false).isRequired(false).create(EVALUATE_CLASSIFIED_TARGETS_OPT);
+		Option outputResultFile=OptionBuilder.withDescription("Output file with the opinion-target <-> propterty pairs").hasArg(true).isRequired(true).create(OUTPUT_RESULT_PATH_OPT);
+		Option outputHtmlEvalFile=OptionBuilder.withDescription("Path to file html file that will contain the evaluation results").hasArg(true).isRequired(true).create(HTML_EVAL_OUTPUT_PATH_OPT);
 		
 		options.addOption(luceneIndexPath);
 		options.addOption(targetsToClassifyFilePath);
@@ -87,7 +88,9 @@ public class MainOpinionTargetClassifier {
 	        	classificationResultPrinter.printHTMLEvaluation(classifiedTargets, new FileOutputStream(new File(outputHtmlEvalFile)));
 	        }
 		}catch(Exception e){
-			e.printStackTrace();
+			log.debug(e);
+			HelpFormatter formatter = new HelpFormatter();
+        	formatter.printHelp( "java -jar [NAME_OF_THE_JAR] "+CLASSIFY_TARGETS_OPT+" [OPTIONS]", options );
 		}
 
 	}

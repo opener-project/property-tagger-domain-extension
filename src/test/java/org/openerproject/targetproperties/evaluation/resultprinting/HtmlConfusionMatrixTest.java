@@ -45,20 +45,22 @@ public class HtmlConfusionMatrixTest {
 		
 		//fail("Not yet implemented");
 	}
+	
+	
 
-	@Test
-	public void testGenerateTitleRow() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGenerateHeaderRow() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGenerateDataRow() {
-		fail("Not yet implemented");
-	}
+//	@Test
+//	public void testGenerateTitleRow() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testGenerateHeaderRow() {
+//		fail("Not yet implemented");
+//	}
+//
+//	@Test
+//	public void testGenerateDataRow() {
+//		fail("Not yet implemented");
+//	}
 
 }

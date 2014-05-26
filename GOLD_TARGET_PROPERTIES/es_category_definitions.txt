@@ -1,0 +1,15 @@
+room	habitación	suite	dormitorio
+cleanliness	limpieza	limpio	sucio
+parking	parking	garaje	aparcamiento
+location	ubicación	lugar	area	zona	centro
+breakfast	desayuno	buffet	café	zumo
+restaurant	restaurante	comida	bebida	menu
+bathroom	baño	lavabo	ducha	bañera
+noise	ruido	tráfico	sonido	calma	ruidoso
+swimmingpool	piscina	nadar
+staff	personal	recepción	amable	brusco	atento	profesional
+value_for_money	precio	dinero	ganga	pagar	caro	barato
+internet	internet	conexión	wifi
+facilities	instalación	lavandería	discoteca	biblioteca
+
+
