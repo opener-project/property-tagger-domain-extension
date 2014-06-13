@@ -16,3 +16,5 @@
 /EN_REVIEWS_KAF_BIG
 
 MAIN_OUTPUT*/
+GOLD_TARGET_PROPERTIES/
+dependency-reduced-pom.xml
