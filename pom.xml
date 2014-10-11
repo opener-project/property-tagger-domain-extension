@@ -61,10 +61,6 @@
 			<version>1.2</version>
 		</dependency>
 
-		<!-- Weka -->
-		<!-- <dependency> <groupId>nz.ac.waikato.cms.weka</groupId> <artifactId>weka-dev</artifactId> 
-			<version>3.7.10</version> </dependency> -->
-
 		<!-- Apache Commons Lang -->
 		<dependency>
 			<groupId>commons-lang</groupId>
@@ -78,42 +74,19 @@
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
-		<!-- SSpace -->
-		<dependency>
-			<groupId>edu.ucla.sspace</groupId>
-			<artifactId>sspace</artifactId>
-			<version>2.0.4</version>
-		</dependency>
 
 		<!-- JDOM2 XML library -->
-
 		<dependency>
 			<groupId>org.jdom</groupId>
 			<artifactId>jdom2</artifactId>
 			<version>2.0.5</version>
 		</dependency>
 
-		<!-- Apache Commons HTTP Client -->
-		<dependency>
-			<groupId>commons-httpclient</groupId>
-			<artifactId>commons-httpclient</artifactId>
-			<version>3.1</version>
-		</dependency>
-
-
 		<!-- Spring Framework Context -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>4.0.3.RELEASE</version>
-		</dependency>
-
-		<!-- JAMA, Java Matrices package, required for SVD in SSPACE -->
-
-		<dependency>
-			<groupId>gov.nist.math</groupId>
-			<artifactId>jama</artifactId>
-			<version>1.0.3</version>
 		</dependency>
 
 		<!-- Semantic Vectors -->
@@ -128,65 +101,43 @@
 
 	<build>
 		<!-- <pluginManagement> -->
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>2.3.2</version>
-					<configuration>
-						<source>1.7</source>
-						<target>1.7</target>
-					</configuration>
-				</plugin>
-				<!-- It is not going to work with m2e for now. To make it work from the 
-					command line remove the "pluginManagement" tags -->
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>jaxws-maven-plugin</artifactId>
-					<version>1.10</version>
-					<executions>
-						<execution>
-							<goals>
-								<goal>wsimport</goal>
-							</goals>
-							<configuration>
-								<wsdlUrls>
-									<wsdlUrl>${basedir}/src/main/resources/opener-analysis-service.wsdl</wsdlUrl>
-								</wsdlUrls>
-								<packageName>${project.groupId}.ws.client</packageName>
-								<sourceDestDir>${basedir}/src/main/java</sourceDestDir>
-								<destDir>${basedir}/target/jaxws</destDir>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-shade-plugin</artifactId>
-					<version>2.1</version>
-					<executions>
-						<execution>
-							<phase>package</phase>
-							<goals>
-								<goal>shade</goal>
-							</goals>
-							<configuration>
-								<transformers>
-									<transformer
-										implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-										<manifestEntries>
-											<Main-Class>org.openerproject.targetproperties.main.CLI</Main-Class>
-										</manifestEntries>
-									</transformer>
-								</transformers>
-								<artifactSet>
-									<excludes />
-								</artifactSet>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-			</plugins>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>2.1</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<transformers>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<manifestEntries>
+										<Main-Class>org.openerproject.targetproperties.main.CLI</Main-Class>
+									</manifestEntries>
+								</transformer>
+							</transformers>
+							<artifactSet>
+								<excludes />
+							</artifactSet>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 		<!-- </pluginManagement> -->
 	</build>
 </project>

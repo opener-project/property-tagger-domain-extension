@@ -75,7 +75,7 @@ public class MainSemanticVectorGeneration {
 	        
 	        
 		}catch(Exception e){
-			log.debug(e);
+			log.error(e);
 			HelpFormatter formatter = new HelpFormatter();
         	formatter.printHelp( "java -jar [NAME_OF_THE_JAR] "+SEMANTIC_VECTOR_OPT+" [OPTIONS]", options );
 		}

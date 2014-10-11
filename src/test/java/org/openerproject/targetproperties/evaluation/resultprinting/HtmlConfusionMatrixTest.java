@@ -43,24 +43,10 @@ public class HtmlConfusionMatrixTest {
 
 		htmlConfusionMatrix.printHtml();
 		
-		//fail("Not yet implemented");
+		//This test was one-shot test to check some stuff... not a real unit test...
+		assertTrue(true);
 	}
 	
-	
 
-//	@Test
-//	public void testGenerateTitleRow() {
-//		fail("Not yet implemented");
-//	}
-//
-//	@Test
-//	public void testGenerateHeaderRow() {
-//		fail("Not yet implemented");
-//	}
-//
-//	@Test
-//	public void testGenerateDataRow() {
-//		fail("Not yet implemented");
-//	}
 
 }

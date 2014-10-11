@@ -6,10 +6,9 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
+import org.openerproject.targetproperties.evaluation.RepresentativeTargetPropertiesSampler.CategoryRepresentatives;
+import org.openerproject.targetproperties.evaluation.RepresentativeTargetPropertiesSampler.TargetAndCategory;
 import org.openerproject.targetproperties.evaluation.resultprinting.HtmlConfusionMatrix;
-import org.openerproject.targetproperties.sandbox.RepresentativeTargetPropertiesSampler;
-import org.openerproject.targetproperties.sandbox.RepresentativeTargetPropertiesSampler.CategoryRepresentatives;
-import org.openerproject.targetproperties.sandbox.RepresentativeTargetPropertiesSampler.TargetAndCategory;
 import org.openerproject.targetproperties.svector.clustering.CosineSimSearcher;
 
 import com.google.common.collect.Lists;

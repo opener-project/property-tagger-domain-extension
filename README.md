@@ -25,7 +25,7 @@ Then, after going to the directory containing the src folder and the pom.xml fil
 mvn clean package
 ```
 
-Now you can execute one of the two processes, generate the word vector space, or classify a list of words into porperties/categories (the second one requires a word vector space).
+Now you can execute one of the two processes, generate the word vector space, or classify a list of words into properties/categories (the second one requires a word vector space).
 In order to generate the word vector space the command should like this:
 
 ```
@@ -56,6 +56,6 @@ Where options are:
 * -e Flag to indicate if you want to generate some evaluation information (html table comparing results, confusion matrix, etc.). Note that this requires that the input terms to classify come with a gold category to allow the comparison.
 * -h Path to the html file that will be generated to contain the evaluation information
 
-The result will consist on a file containing pairs of words (or multiword terms) and their assigned category for this domain, tab separated.
+The result will consist of a file containing pairs of words (or multiword terms) and their assigned category for this domain, tab separated.
 
 Obviously, the process and the results obtained using this approach heavily rely on the quality (or representativeness) of the input documents to generate an accurate word vector space.

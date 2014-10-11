@@ -19,7 +19,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class CLI {
 
-	private static Logger log=Logger.getLogger(Main2.class);
+	private static Logger log=Logger.getLogger(CLI.class);
 	
 	// private static Options options;
 	private static ApplicationContext appContext = new ClassPathXmlApplicationContext(

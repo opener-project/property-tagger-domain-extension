@@ -11,7 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
-import org.openerproject.targetproperties.kaf.Analyzer;
+//import org.openerproject.targetproperties.kaf.Analyzer;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Lists;
@@ -19,7 +19,7 @@ import com.google.common.collect.Multimap;
 
 public class DocumentPreprocessorImpl implements DocumentPreprocessor {
 
-	private Analyzer analyzer;
+	//private Analyzer analyzer;
 
 	private Multimap<String, List<String>> multiwordMap=ArrayListMultimap.create();
 
@@ -29,15 +29,15 @@ public class DocumentPreprocessorImpl implements DocumentPreprocessor {
 		return preprocessedContent;
 	}
 
-	public String getKAF(String documentContent, String language) {
-		String kaf = null;
-		if (language != null && language.length() != 0) {
-			kaf = analyzer.analyzeText(documentContent, language);
-		} else {
-			kaf = analyzer.analyzeText(documentContent);
-		}
-		return kaf;
-	}
+//	public String getKAF(String documentContent, String language) {
+//		String kaf = null;
+//		if (language != null && language.length() != 0) {
+//			kaf = analyzer.analyzeText(documentContent, language);
+//		} else {
+//			kaf = analyzer.analyzeText(documentContent);
+//		}
+//		return kaf;
+//	}
 
 	public List<String> getPreprocessedContent(String kaf) {
 		try {
@@ -111,9 +111,9 @@ public class DocumentPreprocessorImpl implements DocumentPreprocessor {
 		return isValid;
 	}
 
-	public void setAnalyzer(Analyzer analyzer) {
-		this.analyzer = analyzer;
-	}
+//	public void setAnalyzer(Analyzer analyzer) {
+//		this.analyzer = analyzer;
+//	}
 
 	//
 	public void loadMultiwords(List<String> multiwords) {

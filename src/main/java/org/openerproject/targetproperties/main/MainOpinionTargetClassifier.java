@@ -43,7 +43,7 @@ public class MainOpinionTargetClassifier {
 		Option termVectorsFilePath=OptionBuilder.withDescription("Path to SemanticVectors term vectors file").hasArg(true).isRequired(true).create(TERM_VECTORS_PATH_OPT);
 		Option evaluateClassifiedTargets=OptionBuilder.withDescription("Evaluate the results (comparison table and confusion matrix)").hasArg(false).isRequired(false).create(EVALUATE_CLASSIFIED_TARGETS_OPT);
 		Option outputResultFile=OptionBuilder.withDescription("Output file with the opinion-target <-> propterty pairs").hasArg(true).isRequired(true).create(OUTPUT_RESULT_PATH_OPT);
-		Option outputHtmlEvalFile=OptionBuilder.withDescription("Path to file html file that will contain the evaluation results").hasArg(true).isRequired(true).create(HTML_EVAL_OUTPUT_PATH_OPT);
+		Option outputHtmlEvalFile=OptionBuilder.withDescription("Path to file html file that will contain the evaluation results").hasArg(true).isRequired(false).create(HTML_EVAL_OUTPUT_PATH_OPT);
 		
 		options.addOption(luceneIndexPath);
 		options.addOption(targetsToClassifyFilePath);
@@ -88,7 +88,7 @@ public class MainOpinionTargetClassifier {
 	        	classificationResultPrinter.printHTMLEvaluation(classifiedTargets, new FileOutputStream(new File(outputHtmlEvalFile)));
 	        }
 		}catch(Exception e){
-			log.debug(e);
+			log.error(e);
 			HelpFormatter formatter = new HelpFormatter();
         	formatter.printHelp( "java -jar [NAME_OF_THE_JAR] "+CLASSIFY_TARGETS_OPT+" [OPTIONS]", options );
 		}
