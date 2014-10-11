@@ -14,13 +14,15 @@ public class TargetToClassify implements Comparable<TargetToClassify>{
 	private static Logger log=Logger.getLogger(TargetToClassify.class);
 	
 	private String opinionTarget;
+	private String opinionTargetPOS;
 	private String goldCategory;
 	private String assignedCategory;
 	private boolean outOfDictionaryTerm;
 	
-	public TargetToClassify(String opinionTarget) {
+	public TargetToClassify(String opinionTarget,String opinionTargetPos) {
 		super();
 		this.opinionTarget = opinionTarget;
+		this.opinionTargetPOS=opinionTargetPos;
 	}
 
 	public String getOpinionTarget() {
@@ -29,6 +31,14 @@ public class TargetToClassify implements Comparable<TargetToClassify>{
 
 	public void setOpinionTarget(String opinionTarget) {
 		this.opinionTarget = opinionTarget;
+	}
+
+	public String getOpinionTargetPOS() {
+		return opinionTargetPOS;
+	}
+
+	public void setOpinionTargetPOS(String opinionTargetPOS) {
+		this.opinionTargetPOS = opinionTargetPOS;
 	}
 
 	public String getGoldCategory() {
@@ -50,8 +60,8 @@ public class TargetToClassify implements Comparable<TargetToClassify>{
 	/**
 	 * Parses the file in the input path to obtain the targets to classify. 
 	 * The format of the file content should be one target per line, optionally accompanied with its gold category separated with a tab: 
-	 *  TARGET1 [ TAB GOLD_CATEGORY] NEW_LINE
-	 *  TARGET2 [ TAB GOLD_CATEGORY] NEW_LINE ...
+	 *  TARGET1 POS1 [ TAB GOLD_CATEGORY] NEW_LINE
+	 *  TARGET2 POS2 [ TAB GOLD_CATEGORY] NEW_LINE ...
 	 * @param targetsToClassifyFilePath
 	 * @return
 	 */
@@ -62,9 +72,10 @@ public class TargetToClassify implements Comparable<TargetToClassify>{
 			for(String line:lines){
 				String[]parts=line.split("\t");
 				String target=parts[0];
-				TargetToClassify targetToClassify=new TargetToClassify(target);
-				if(parts.length>1){
-					String goldCategory=parts[1];
+				String targetPos=parts[1];
+				TargetToClassify targetToClassify=new TargetToClassify(target,targetPos);
+				if(parts.length>2){
+					String goldCategory=parts[2];
 					targetToClassify.setGoldCategory(goldCategory);
 				}
 				parsedTargetsToClassify.add(targetToClassify);

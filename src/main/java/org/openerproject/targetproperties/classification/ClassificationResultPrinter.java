@@ -28,7 +28,7 @@ public class ClassificationResultPrinter {
 	}
 	
 	private String getOutputFormatForClassifiedTarget(TargetToClassify targetToClassify){
-		return targetToClassify.getOpinionTarget()+"\t"+targetToClassify.getAssignedCategory();
+		return targetToClassify.getOpinionTarget()+"\t"+targetToClassify.getOpinionTargetPOS()+"\t"+targetToClassify.getAssignedCategory();
 	}
 	
 	public void printHTMLEvaluation(List<TargetToClassify>classifiedTargets,OutputStream os){
